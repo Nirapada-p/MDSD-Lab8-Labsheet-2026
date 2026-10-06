@@ -56,7 +56,59 @@
 บันทึกโค้ดที่ Gemini ตอบกลับมาที่ด้านล่าง
 
 ```text
-บันทึกผลลัพธ์ที่นี่
+1. ตารางรายการสินค้าที่ผู้ใช้กดถูกใจ (Liked Products)
+ตารางนี้ออกแบบมาเพื่อให้สามารถแสดงผลข้อมูลเบื้องต้น (ชื่อ, ราคา, รูปภาพ) ได้ทันทีโดยไม่ต้องรอโหลดเครือข่าย และบันทึกเวลาที่กดถูกใจเพื่อใช้สำหรับเรียงลำดับ (ORDER BY)
+code
+Dart
+import 'package:drift/drift.dart';
+
+@DataClassName('LikedProduct')
+class LikedProducts extends Table {
+  // 1. ไอดีสินค้าอ้างอิง (ใช้เป็น Primary Key เพราะสินค้าชิ้นหนึ่งควรถูกใจได้แค่ 1 ครั้งต่อผู้ใช้)
+  IntColumn get productId => integer()();
+
+  // 2. ชื่อสินค้า
+  TextColumn get title => text()();
+
+  // 3. ราคา (ใช้ real หรือ int หน่วยสตางค์/บาท ตามความเหมาะสม ในที่นี้เลือก real เพื่อรองรับทศนิยม)
+  RealColumn get price => real()();
+
+  // 4. รูปภาพ (เก็บ URL หรือ Path ของรูปภาพสินค้า)
+  TextColumn get imageUrl => text()();
+
+  // 5. เวลาที่กดถูกใจ (เก็บเป็น DateTime เพื่อให้ง่ายต่อการนำไป sort เรียงลำดับล่าสุด)
+  DateTimeColumn get likedAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {productId};
+}
+
+2. ตารางเก็บบันทึกร่างประกาศขายที่ AI แนะนำ (AI Draft Listings)
+ตารางนี้ทำหน้าที่แทน State ชั่วคราว เพื่อให้ผู้ใช้สามารถปิดแอปแล้วกลับมาแก้ไขร่างประกาศที่ AI สร้างให้จากรูปภาพต่อได้ โดยมีข้อมูลที่จำเป็นครบถ้วนและบอกเวลาแก้ไขล่าสุด
+code
+Dart
+import 'package:drift/drift.dart';
+
+@DataClassName('AiDraftListing')
+class AiDraftListings extends Table {
+  // 1. ไอดีประจำร่างประกาศ (Auto-increment ให้ SQLiteจัดการสร้างให้เอง)
+  IntColumn get id => integer().autoIncrement()();
+
+  // 2. ชื่อประกาศ
+  TextColumn get title => text().nullable()(); // อาจจะยังไม่มี ถ้า AI ยังวิเคราะห์ไม่เสร็จหรือผู้ใช้ยังไม่กรอก
+
+  // 3. หมวดหมู่สินค้า
+  TextColumn get category => text().nullable()();
+
+  // 4. คำบรรยายสินค้า
+  TextColumn get description => text().nullable()();
+
+  // 5. Path ของรูปภาพในเครื่อง (เช่น Local Cache Path หรือ Directory ของแอป)
+  TextColumn get imagePath => text()();
+
+  // 6. เวลาที่แก้ไขล่าสุด (ใช้สำหรับจัดเรียงร่างประกาศล่าสุดขึ้นก่อน)
+  DateTimeColumn get updatedAt => dateTime()();
+}
 ```
 
 
