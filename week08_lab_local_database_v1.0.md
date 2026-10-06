@@ -378,9 +378,13 @@ items: const [
 
 <img width="445" height="996" alt="image" src="https://github.com/user-attachments/assets/ee032164-fa14-49f0-a434-fca993203b73" />
 
+### ทดสอบกดลบ (Remove) 1 ชิ้น 
+
 <img width="438" height="1016" alt="image" src="https://github.com/user-attachments/assets/ed97d2f3-bb57-4dc6-bae5-b1655ed84e56" />
 
+
 <img width="471" height="1015" alt="image" src="https://github.com/user-attachments/assets/125734cb-7628-4797-bf1a-541201e75bc8" />
+
 
 ### (ง) กลับไปหน้า Home 
 
