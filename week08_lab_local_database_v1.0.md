@@ -386,8 +386,6 @@ items: const [
 
 ### (ง) กลับไปหน้า Home 
 
-<img width="485" height="1017" alt="image" src="https://github.com/user-attachments/assets/cb5ece14-06c4-43e5-a133-2964e1ba8731" />
-
 <img width="471" height="1015" alt="image" src="https://github.com/user-attachments/assets/125734cb-7628-4797-bf1a-541201e75bc8" />
 
 
