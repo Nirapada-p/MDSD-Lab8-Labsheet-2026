@@ -435,9 +435,32 @@ class SellItemPage extends StatefulWidget {
 
 > ✅ **Checkpoint 5.1** รันแอปแล้วทำตามลำดับนี้: 1. สร้างร่างประกาศใหม่ผ่าน Tab "ลงประกาศขาย" ด้วยความช่วยเหลือของ AI เหมือนสัปดาห์ที่ 7 2. กดยืนยันร่าง 3. กดปุ่มไอคอนเข้าหน้า "ร่างประกาศของฉัน" แล้วเห็นร่างที่เพิ่งสร้าง 4. ปิดแอปให้สนิทแล้วเปิดใหม่ กลับเข้าหน้า "ร่างประกาศของฉัน" อีกครั้ง ถ่ายภาพหน้าจอทั้ง 4 ขั้นตอนนี้แนบส่ง เพื่อพิสูจน์ว่าร่างไม่หายไปแม้ปิดแอปแล้ว 
 
-```text
-บันทึกผลลัพธ์ที่นี่
 ```
+ขั้นตอนที่ 1
+```
+
+<img width="446" height="1012" alt="image" src="https://github.com/user-attachments/assets/dd7a3048-d889-4320-8835-2b69305e21cd" />
+
+```
+ขั้นตอนที่ 2
+```
+
+<img width="442" height="1006" alt="image" src="https://github.com/user-attachments/assets/de7e8746-1590-4fba-b7ee-fbe07b1120b9" />
+
+```
+ขั้นตอนที่ 3
+```
+
+<img width="450" height="1012" alt="image" src="https://github.com/user-attachments/assets/a99d1529-a89f-4d39-9173-60439509c861" />
+
+```
+ขั้นตอนที่ 4 หลังปิดแอป
+```
+
+<img width="373" height="875" alt="image" src="https://github.com/user-attachments/assets/153a5e04-f51d-4984-b798-a176da172d5d" />
+
+
+
 
 ---
 
